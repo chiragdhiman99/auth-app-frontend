@@ -19,7 +19,6 @@
 
 - 🔑 **Email & Password Authentication** — Secure signup/login with JWT tokens
 - 🌐 **Google OAuth 2.0** — One-click sign in with Google account
-- 📧 **Email Notifications** — Welcome email sent on account creation via Nodemailer
 - 🛡️ **Protected Routes** — JWT-based route protection on both frontend and backend
 - 🔒 **Password Hashing** — bcrypt encryption — plain passwords never stored
 - 📱 **Fully Responsive** — Works perfectly on mobile, tablet, and desktop
@@ -37,7 +36,7 @@
 | Tailwind CSS 4 | Styling |
 | React Router DOM | Client-side routing |
 | Axios | HTTP requests |
-| React Hot Toast | Notifications |
+| React Hot Toast |
 | Vite | Build tool |
 
 ### Backend
@@ -49,7 +48,6 @@
 | JWT (jsonwebtoken) | Authentication tokens |
 | bcrypt | Password hashing |
 | Passport.js | Google OAuth strategy |
-| Nodemailer | Email service |
 
 ### Deployment
 | Service | Purpose |
@@ -59,17 +57,16 @@
 | MongoDB Atlas | Cloud database |
 
 ---
-
 ## 📸 Screenshots
 
-### Login Page
-> Clean glassmorphism dark UI with Google OAuth and email/password login
+### 🔑 Login Page
+![Login Page](public/screenshots/login.png)
 
-### Signup Page  
-> Real-time password strength indicator and form validation
+### 📝 Signup Page
+![Signup Page](public/screenshots/signup.png)
 
-### Dashboard
-> User profile with Google avatar, account stats, and activity feed
+### 🏠 Dashboard
+![Dashboard](public/screenshots/dashboard.png)
 
 ---
 
