@@ -12,7 +12,7 @@ export default function Login() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const url = "http://localhost:5000/api/auth/login";
+  const url = "https://auth-app-backend-09tp.onrender.com/api/auth/login";
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -31,12 +31,12 @@ export default function Login() {
       toast.error(err.response?.data?.message || err.message);
     }
 
-    setForm({email: "", password: "" });
+    setForm({ email: "", password: "" });
     setLoading(false);
   };
 
   const handleGoogle = () => {
-    window.location.href = "http://localhost:5000/api/auth/google";
+    window.location.href = "https://auth-app-backend-09tp.onrender.com/api/auth/google";
   };
 
   return (

@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 
 export default function Signup() {
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [form, setForm] = useState({ name: "", email: "", password: "", confirm: "" });
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -12,34 +12,33 @@ export default function Signup() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const url = "http://localhost:5000/api/auth/signup";
+  const url = "https://auth-app-backend-09tp.onrender.com/api/auth/signup";
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (form.password !== form.confirm) return alert("Passwords don't match!");
-   
-  setLoading(true);
 
-  try {
-    const res = await axios.post(url, form);
-    console.log(res.data.token);
-    localStorage.setItem("token", res.data.token);
-    toast.success(res.data.message);
-    navigate("/dashboard");
+    setLoading(true);
 
-  } catch (err) {
-    console.log(err.response?.data || err.message);
-toast.error(err.response?.data?.message || err.message);
-  }
+    try {
+      const res = await axios.post(url, form);
+      console.log(res.data.token);
+      localStorage.setItem("token", res.data.token);
+      toast.success(res.data.message);
+      navigate("/dashboard");
+    } catch (err) {
+      console.log(err.response?.data || err.message);
+      toast.error(err.response?.data?.message || err.message);
+    }
 
-  setForm({ name: "", email: "", password: "" });
-  setLoading(false);
-    
+    setForm({ name: "", email: "", password: "", confirm: "" });
+    setLoading(false);
   };
 
   const handleGoogle = () => {
-    window.location.href = "http://localhost:5000/api/auth/google";
+    window.location.href =
+      "https://auth-app-backend-09tp.onrender.com/api/auth/google";
   };
 
   const strength = (() => {
